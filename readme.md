@@ -203,6 +203,23 @@ WEBサーバ、定期実行タスクなどを実行するFunctionsエミュレ�
 # git の準備
 今回のプロジェクト用に git リポジトリを作成します
 
+認証の準備
+
+SSHキーの作成
+
+```
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+作成したキーを git サイトの SSHキーセクションに貼り付けます
+
+
+gitに認証情報を設定する
+
+```
+git remote set-url origin git@github.com:username/repository.git
+```
+
 ローカルで git の初期化を行う
 
 ```
