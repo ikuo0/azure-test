@@ -165,16 +165,18 @@ def http_trigger(req: func.HttpRequest) -> func.HttpResponse:
 
 ## 定期実行タスクの作成
 
-｀｀｀
+```
 func new --template "Timer trigger" --name timer_trigger
 ```
 
 以下のように質問されるので
+
 ```
 Schedule: [0 */5 * * * *]
 ```
 
 以下のように回答します、これは１分に１回実行される定期実行になります
+
 ```
 Schedule: [0 */5 * * * *] 0 */1 * * * *
 ```
@@ -300,9 +302,11 @@ git push -u origin develop-tracy
 ## Functionsの作成
 Azure portal で適当なグループを作成
 グループ内にFunctionsを作成する
+作成時点でリソースの状態により github 連携が選べたり選べなかったりするが、作成後にデプロイセンターで設定できるので、ここで設定できなくても問題ない
 作成後に デプロイセンター にて ｇｉｔｈｕｂ を割り当てる
 
 
+### chatGPTによる解説
 Azure Portal にログイン:
 Azure Portal にアクセスし、ログインします。
 Function App を選択:
