@@ -3,16 +3,16 @@
 # Windows で Azure Functions の開発
 
 # 準備
-docker ホストのインストール
-func, azurite コマンドのインストール
-anaconda のインストール
-git のインストール
+docker ホストのインストール<br>
+func, azurite コマンドのインストール<br>
+anaconda のインストール<br>
+git のインストール<br>
 
 
 ## Anaconda起動
-Anaconda Navigator を管理者モードで起動して python 3.11 環境を作成
-作成が終わったらｐｙｔｈｏｎ3.11環境をターミナルで起動します
-起動したら適当なプロジェクトディレクトリを作成しプロジェクトディレクトリまで移動してください
+Anaconda Navigator を管理者モードで起動して python 3.11 環境を作成<br>
+作成が終わったらpython3.11環境をターミナルで起動します<br>
+起動したら適当なプロジェクトディレクトリを作成しプロジェクトディレクトリまで移動してください<br>
 
 ## azurite, func コマンドのインストール
 
@@ -31,15 +31,15 @@ conda install git
 ```
 
 # Functionsプロジェクトの作成
-以下のコマンドを入力しプロジェクトを作成します
-project1 はディレクトリ名でコマンド入力すると作成されます
+以下のコマンドを入力しプロジェクトを作成します<br>
+project1 はディレクトリ名を表し、コマンド実行すると project1 ディレクトリが作成されます
 
 ```
 func init project1 --python
 ```
 
-project1 というディレクトリが作成されます
-project1 には以下のファイルが含まれます
+project1 というディレクトリが作成されます<br>
+project1 には以下のファイルが含まれます<br>
 
 ```
 Mode                 LastWriteTime         Length Name
@@ -53,9 +53,9 @@ d-----        2024/04/24     20:26                .vscode
 ```
 
 ## venv の作成
-project1 ディレクトリに移動します
-以下のコマンドを入力して python の仮想環境 venv を作成します
-project1 ディレクトリの中に venv ディレクトリが作成されます
+project1 ディレクトリに移動します<br>
+以下のコマンドを入力して python の仮想環境 venv を作成します<br>
+project1 ディレクトリの中に venv ディレクトリが作成されます<br>
 
 ```
 python -m venv venv
@@ -300,23 +300,23 @@ git push -u origin develop-tracy
 # Azure Portalの設定
 
 ## Functionsの作成
-Azure portal で適当なグループを作成
-グループ内にFunctionsを作成する
-作成時点でリソースの状態により github 連携が選べたり選べなかったりするが、作成後にデプロイセンターで設定できるので、ここで設定できなくても問題ない
-作成後に デプロイセンター にて ｇｉｔｈｕｂ を割り当てる
+Azure portal で適当なグループを作成<br>
+グループ内にFunctionsを作成する<br>
+作成時点でリソースの状態により github 連携が選べたり選べなかったりするが、作成後にデプロイセンターで設定できるので、ここで設定できなくても問題ない<br>
+作成後に デプロイセンター にて github を割り当てる<br>
 
 
 ### chatGPTによる解説
-Azure Portal にログイン:
-Azure Portal にアクセスし、ログインします。
-Function App を選択:
-対象の Azure Functions アプリケーションを選択します。
-デプロイメント センターへのアクセス:
-左側のナビゲーションメニューから「デプロイメントセンター」を選択します。
-デプロイメントソースの設定:
-GitHub または使用している Git リポジトリをデプロイメントソースとして設定し、develop-hoge ブランチを選択してデプロイメントのトリガーとします。
-ビルドプロバイダとデプロイメントトリガーの設定:
-必要に応じてビルドプロバイダを設定し（例えば Kudu、GitHub Actions 等）、プッシュトリガーを有効にします。
+Azure Portal にログイン:<br>
+Azure Portal にアクセスし、ログインします。<br>
+Function App を選択:<br>
+対象の Azure Functions アプリケーションを選択します。<br>
+デプロイメント センターへのアクセス:<br>
+左側のナビゲーションメニューから「デプロイメントセンター」を選択します。<br>
+デプロイメントソースの設定:<br>
+GitHub または使用している Git リポジトリをデプロイメントソースとして設定し、develop-hoge ブランチを選択してデプロイメントのトリガーとします。<br>
+ビルドプロバイダとデプロイメントトリガーの設定:<br>
+必要に応じてビルドプロバイダを設定し（例えば Kudu、GitHub Actions 等）、プッシュトリガーを有効にします。<br>
 
 
 
