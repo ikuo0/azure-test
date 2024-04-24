@@ -1,8 +1,10 @@
 
 
+# Windows で Azure Functions の開発
+
 # 準備
 docker ホストのインストール
-az コマンドのインストール
+func, azurite コマンドのインストール
 anaconda のインストール
 git のインストール
 
@@ -217,7 +219,13 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 gitに認証情報を設定する
 
 ```
-git remote set-url origin git@github.com:username/repository.git
+git remote set-url origin git@github.com:username/repository-name.git
+```
+
+認証テスト
+
+```
+ssh -T git@github.com
 ```
 
 ローカルで git の初期化を行う
@@ -260,6 +268,51 @@ git push -u origin master
 
 ```
 
+# git に開発者個人用のブランチを作成してpushする
+
+ローカルを最新にする
+
+```
+git checkout main
+git pull
+```
+
+ブランチを作成して切り替える
+
+```
+git checkout -b develop-tracy
+
+```
+
+
+ブランチをpushする
+
+```
+git push -u origin develop-tracy
+```
+
+
+
+
+
+# Azure Portalの設定
+
+## Functionsの作成
+Azure portal で適当なグループを作成
+グループ内にFunctionsを作成する
+作成後に デプロイセンター にて ｇｉｔｈｕｂ を割り当てる
+
+
+Azure Portal にログイン:
+Azure Portal にアクセスし、ログインします。
+Function App を選択:
+対象の Azure Functions アプリケーションを選択します。
+デプロイメント センターへのアクセス:
+左側のナビゲーションメニューから「デプロイメントセンター」を選択します。
+デプロイメントソースの設定:
+GitHub または使用している Git リポジトリをデプロイメントソースとして設定し、develop-hoge ブランチを選択してデプロイメントのトリガーとします。
+ビルドプロバイダとデプロイメントトリガーの設定:
+必要に応じてビルドプロバイダを設定し（例えば Kudu、GitHub Actions 等）、プッシュトリガーを有効にします。
 
 
 
